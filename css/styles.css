@@ -87,10 +87,8 @@ figure{
     left: 0;
     bottom: -25px;
     transition: width var(--transition-duration) 
-    cubic-bezier(0.4, 0, 0.2, 1);
+                        cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-
 .nav-list-item:hover .nav-list-item-link::after {
     width: 100%;
 }
@@ -100,7 +98,13 @@ figure{
 .address-list-item-link:hover,
 .address-list-item-link:focus {
     color: var(--ocean);
+    transition: color var(--transition-duration) 
+                        cubic-bezier(0.4, 0, 0.2, 1); 
 }
+.nav-list-item-link:hover::after, .active::after {
+    width: 100%;
+}
+
 .address-list-item-link {
     color: var(--slate);
     font-size: 16px;
@@ -148,6 +152,8 @@ figure{
 }
 .hero-cta:hover{
 background-color: var(--ocean);
+transition: background-color var(--transition-duration) 
+                    cubic-bezier(0.4, 0, 0.2, 1);
 }
 .feature {
     background-color: var(--white);
@@ -225,7 +231,7 @@ background-color: var(--ocean);
     border-radius: 50%;
     fill: var(--white);
     transition: background-color var(--transition-duration) 
-    cubic-bezier(0.4, 0, 0.2, 1);
+                        cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-media-icon-link:hover {
     background-color: var(--ocean);
@@ -298,6 +304,7 @@ margin-bottom: 72px;
     justify-content: center;
     align-items: center;
     color: var(--light-slate);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .customer-list-item:hover {
     border-color: var(--ocean);
@@ -325,19 +332,38 @@ margin-bottom: 72px;
     line-height: 1.5em;
     letter-spacing: 0.64px;
     padding: 12px 24px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-projects-list {
     display: flex;
     gap: 24px;
     justify-content: center;
 }
+.portfolio-item-button:hover {
+    background: var(--ocean);
+    box-shadow:  0px 2px 2px 0px rgba(0, 0, 0, 0.12), 
+                            0px 2px 1px 0px rgba(0, 0, 0, 0.08), 
+                            0px 3px 1px 0px rgba(0, 0, 0, 0.10);
+    color: var(--white);
+    border-color: var(--ocean);
+
+
+}
 .project {
     padding-bottom: 120px;
 }
+.project-item-details {
+    padding: 32px 16px;
+    border: 1px solid var(--cornflower);
+    border-top: unset;
+
+} 
 /* hw5 */
 .section-project-list-item{
     position: relative;
-    border: 1px solid var(--cornflower);
+    /* border: 1px solid var(--cornflower); */
     background: var(--white);
     /* overflow: hidden; */
 }
@@ -391,11 +417,7 @@ margin-bottom: 72px;
     row-gap: 48px;
     column-gap: 24px;
 }
-.project-item-details {
-    padding: 32px 16px;
-    border: 1px solid var(--cornflower);
-    border-top: unset;
-} 
+
 
 .section-project-list-item {
     background: var(--white);
@@ -403,14 +425,14 @@ margin-bottom: 72px;
 
 .section-project-list-item:hover
 .project-item-details {
-    border: unset;
+    /* border: unset; */
 }
 
 .section-project-list-item:hover {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
                             0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
                             0px 1px 6px 0px rgba(46, 47, 66, 0.08);
-    border: 1px solid var(--cloud);
+    /* border: 1px solid var(--cloud); */
     border: unset;
 }
 .section-project-header-text {
@@ -428,16 +450,7 @@ margin-bottom: 72px;
         line-height: 1.5em;
         letter-spacing: 0.32px;
 }
-.portfolio-item-button:hover {
-    background: var(--ocean);
-    box-shadow:  0px 2px 2px 0px rgba(0, 0, 0, 0.12), 
-                            0px 2px 1px 0px rgba(0, 0, 0, 0.08), 
-                            0px 3px 1px 0px rgba(0, 0, 0, 0.10);
-    color: var(--white);
-    border-color: var(--ocean);
-    transition: background-color 
-                        250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 
 .footer-text {
     color: var(--cloud);
@@ -502,14 +515,14 @@ margin-bottom: 16px;
     fill: var(--white); 
     border-radius: 50%;
     background-color: var(--iris);
+    transition:background-color
+    250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-icon {
     padding: 4px 4px;
 }
 .footer-social-media-icon-link:hover {
     background-color: var(--green);
-    transition: background-color 
-                    250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal {
     position: fixed;
@@ -556,23 +569,55 @@ margin-bottom: 16px;
 }
 
 .modal-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--cornflower);
-    border: 0px;
-    border-radius: 50px;
-    width: 30px;
-    height: 30px; 
+    /* display: flex; */
+    display: block;
+    /* align-items: center;
+    justify-content: center; */
+    /* background-color: var(--cornflower); */
+    /* border: 0px;
+    border-radius: 50px; */
+    width: 24px;
+    height: 24px; 
+    /* stroke: 1px solid rgba(0, 0, 0, 0.10); */
+    /* stroke-width: 1px; */
+    /* add margin left auto color navyblue */
+    margin-left: auto;
+    color: var(--navyblue);
+        background-color: var(--cornflower);
+        border-radius: 50%;
 
-    position: absolute;
-    left: 100%;
-    top: 0px;
+    /* position: absolute; 
+    right: 24px;
+    top: 24px; */
     
     cursor: pointer;
-    transition: color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1); 
+    /* transition: color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);  */
+
+    /* add */
+    transition: background-color 250ms cubic-bezier(0.4 0, 0.2, 1),
+                        border-color  250ms cubic-bezier(0.4 0, 0.2, 1),
+                        color 250ms cubic-bezier(0.4 0, 0.2, 1);
+    border: 1px solid rgb(142, 143, 153, .5);
 }
 
+.modal-close-icon {
+    stroke: 1px solid rgba(0, 0, 0, 0.10);
+    width: 8px;
+    height: 8px;
+    /* stroke:currentColor; */
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.modal-close:hover,
+.modal-close:focus {
+background-color: var(--ocean);
+border-color: var(--ocean);
+color: var(--cloud);
+/* /* add */
+stroke-width: 1px;
+border-color: transparent;
+fill: var(--white);
+}
 
 
 
