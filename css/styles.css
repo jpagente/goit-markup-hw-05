@@ -95,6 +95,9 @@ figure{
 .nav-list-item:hover .nav-list-item-link {
     color: var(--ocean);
 }
+.nav-list-item-link.active {
+    color: var(--ocean);
+}
 .address-list-item-link:hover,
 .address-list-item-link:focus {
     color: var(--ocean);
@@ -104,7 +107,6 @@ figure{
 .nav-list-item-link:hover::after, .active::after {
     width: 100%;
 }
-
 .address-list-item-link {
     color: var(--slate);
     font-size: 16px;
@@ -348,8 +350,6 @@ margin-bottom: 72px;
                             0px 3px 1px 0px rgba(0, 0, 0, 0.10);
     color: var(--white);
     border-color: var(--ocean);
-
-
 }
 .project {
     padding-bottom: 120px;
@@ -360,15 +360,10 @@ margin-bottom: 72px;
     border-top: unset;
 
 } 
-/* hw5 */
 .section-project-list-item{
     position: relative;
-    /* border: 1px solid var(--cornflower); */
     background: var(--white);
-    /* overflow: hidden; */
 }
-
-/* hw5 */ 
 .section-project-list-item:hover figcaption{
     transform: translateY(0); 
 }
@@ -383,21 +378,17 @@ margin-bottom: 72px;
     letter-spacing: 0.32px;
     /* position: relative; */
 }
-/* hw5 */
 .our-projects-figure figcaption{
     position: absolute;
     top: 0px;
     left: 0px;
-
     width: 100%;
     height: 100%;
     background-color: var(--iris);
     padding: 0px 32px;
     color: var(--cloud);
-
     object-fit: cover;
     object-position: center;
-
     text-align: left;
     align-items: center;
     display: flex;
@@ -409,7 +400,6 @@ margin-bottom: 72px;
     line-height: 1.5em; 
     letter-spacing: 0.32px;
 }
-
 .section-projects-list {
     display: flex;
     flex-wrap: wrap;
@@ -417,17 +407,12 @@ margin-bottom: 72px;
     row-gap: 48px;
     column-gap: 24px;
 }
-
-
 .section-project-list-item {
     background: var(--white);
 }
-
 .section-project-list-item:hover
 .project-item-details {
-    /* border: unset; */
 }
-
 .section-project-list-item:hover {
     box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08), 
                             0px 1px 1px 0px rgba(46, 47, 66, 0.16), 
@@ -450,8 +435,6 @@ margin-bottom: 72px;
         line-height: 1.5em;
         letter-spacing: 0.32px;
 }
-
-
 .footer-text {
     color: var(--cloud);
     font-size: 16px;
@@ -464,7 +447,6 @@ margin-bottom: 72px;
     background: var(--navy-blue);
     padding-top: 101.5px;
     padding-bottom: 100px;
-
 }
 .span-web {
     color: var(--iris);
@@ -535,85 +517,57 @@ margin-bottom: 16px;
     left: 0px; 
     pointer-events: auto;
     opacity: 1; /* visible */
-    /* transition: visibility var(--transition-duration) ; */
     transition-property: visibility, opacity;
     transition-duration: var(--transition-duration);
     transform: none;
 }
-
 .modal.is-hidden{
     visibility: hidden;
     opacity: 0; /* if hidden*/
     pointer-events: none;
 }
-
 .modal.is-hidden .modal-content{
     transform: translateY(-20px) cubic-bezier(0.4, 0, 0.2, 1);;
     transform: scale(0.5) cubic-bezier(0.4, 0, 0.2, 1);;
 }
-
 .modal-content{
     position: relative;
     width: 528px;
     height: 580px;
     padding: 24px;
-
     border-radius: 4px;
     background: var(--dairy);
     box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.20), 
                 0px 1px 3px 0px rgba(0, 0, 0, 0.12), 
                 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
-    
     transform: none;
     transition: transform var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .modal-close {
-    /* display: flex; */
     display: block;
-    /* align-items: center;
-    justify-content: center; */
-    /* background-color: var(--cornflower); */
-    /* border: 0px;
-    border-radius: 50px; */
     width: 24px;
     height: 24px; 
-    /* stroke: 1px solid rgba(0, 0, 0, 0.10); */
-    /* stroke-width: 1px; */
-    /* add margin left auto color navyblue */
     margin-left: auto;
     color: var(--navyblue);
         background-color: var(--cornflower);
         border-radius: 50%;
-
-    /* position: absolute; 
-    right: 24px;
-    top: 24px; */
-    
     cursor: pointer;
-    /* transition: color var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);  */
-
-    /* add */
     transition: background-color 250ms cubic-bezier(0.4 0, 0.2, 1),
                         border-color  250ms cubic-bezier(0.4 0, 0.2, 1),
                         color 250ms cubic-bezier(0.4 0, 0.2, 1);
     border: 1px solid rgb(142, 143, 153, .5);
 }
-
 .modal-close-icon {
     stroke: 1px solid rgba(0, 0, 0, 0.10);
     width: 8px;
     height: 8px;
-    /* stroke:currentColor; */
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .modal-close:hover,
 .modal-close:focus {
 background-color: var(--ocean);
 border-color: var(--ocean);
 color: var(--cloud);
-/* /* add */
 stroke-width: 1px;
 border-color: transparent;
 fill: var(--white);
